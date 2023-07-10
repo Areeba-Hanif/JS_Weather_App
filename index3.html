@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title> WEATHER APP</title>
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@900&display=swap" rel="stylesheet" href="syle.css">
+</head>
+
+<body>
+	
+	<div class="header">
+		<h1> WEATHER APP</h1>
+	</div>
+	<div class="container">
+
+		<form onsubmit="conditionCheck();  return false;">
+
+			<input type="number" name="number" placeholder="Enter temperature here" id="temp" required><br><br>
+
+			<button type="submit" name="Check" class="btn">Check</button>
+
+			<h2 id="result"></h2>
+			<img id="img" src="#">
+			
+
+		</form>
+
+	</div>
+	
+
+	
+
+	<!-- //---------------JAVASCRIPT  CODE--------------------// -->
+	<script>
+		function conditionCheck() {
+			let temperature = document.querySelector("#temp").value;
+
+			if (temperature > 30) {
+				document.querySelector("#result").innerHTML = "It's too HOT  ";
+				document.getElementById("img").src="download11.jpg";
+
+
+
+			} else if (temperature > 25) {
+				document.querySelector("#result").innerHTML = "It's pleasant outside ";
+				document.getElementById("img").src="download7.jpg";
+
+			}
+			else if (temperature > 20) {
+				document.querySelector("#result").innerHTML = "if you are riding a bike please carry JACKET";
+				document.getElementById("img").src="download2.jpg";
+			}
+			else if (temperature > 10) {
+				document.querySelector("#result").innerHTML = "Probably you would need a JACKET. ";
+				document.getElementById("img").src="download6.jpg";
+			}
+			else {
+				document.querySelector("#result").innerHTML = "It's Freezing outside";
+				document.getElementById("img").src="download5.jpg";
+			}
+		}
+
+	</script>
+	
+</body>
+
+</html>
